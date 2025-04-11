@@ -9,8 +9,32 @@
     <h1>我是测试IFAME中是否可以允许设置localstorage的</h1>
     <script>
         window.onload = function(){
-            console.log('我是测试IFAME中是否可以允许设置localstorage的')
-            localStorage.setItem('name', '我是测试IFAME中是否可以允许设置localstorage的')
+            var xhr = new XMLHttpRequest();
+            var data = {
+                "type":"account",
+                "account":"15000912751",
+                "password":"pheAR0TUbpEm2qRbr+a7yBxLMZ50FxUwxu7bNnlaCAK76RdKvz8iamBU/u/1p9G88BY3VHLkBtop3Az0VZejVPdw9UnzOmcGmCUOIkGOWF/5iHz81emLmdaTEjfooxfUAEKfqp3UpLDAe4lyR4BLFXxKuhl9pnkE1N4eZv400WIZth7ODugTPRhYPJe7s8TktvlVldQNhHqcpfDk//UZb/koY8j5+0/0gqlo7vxOzQha9YikYS92homWREL+Z3rpZTUu1AOm5jrRw3ZHvWcVd9aQx9C3B0wqqvhfkDu2nd5dNLQfnARJ30xiyaBITIUrtEkGll5DoykgI/k5KJ6HGg==",
+                "securityCode":"",
+                "appId":"569825501623877632",
+                "tenantId":"568754093342851073"
+            };
+            xhr.open(
+                "POST",
+                "https://apaas-404rc.dfy.definesys.cn/apaas/backend/tenant411/fourapplications/xdap-app/app/login",
+                true
+            );
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        console.log(xhr.responseText);
+                        localStorage.setItem("token", xhr.responseText);
+                    } else {
+                        console.error("Error: ", xhr.status, xhr.statusText);
+                    }
+                }
+            };
+            xhr.send(JSON.stringify(data));
         }
     </script>
 </body>
