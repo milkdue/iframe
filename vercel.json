@@ -1,0 +1,41 @@
+{
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "key": "Access-Control-Allow-Headers",
+            "value": "Accept,Accept-Encoding,Accept-Language,Cookie,Host,Proxy-Connection,Referer,User-Agent,xdaptenantid,xdaptimestamp,xdaptoken,xdapversion,content-type,*"
+          },
+          {
+            "key": "Access-Control-Allow-Methods",
+            "value": "GET, POST, OPTIONS, HEAD, PATCH"
+          },
+          {
+            "key": "Access-Control-Expose-Headers",
+            "value": "xdaptoken,xdapplugin,*"
+          },
+          {
+            "key": "Content-Type",
+            "value": "text/html;charset=UTF-8"
+          },
+          {
+            "key": "Vary",
+            "value": "origin,access-control-request-method,access-control-request-headers,accept-encoding"
+          },
+          {
+            "key": "X-Envoy-Upstream-Service-Time",
+            "value": "10"
+          },
+          {
+            "key": "X-Protected-By",
+            "value": "OpenRASP 2.0"
+          }
+        ]
+      }
+    ]
+}
