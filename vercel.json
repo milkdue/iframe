@@ -34,6 +34,10 @@
           {
             "key": "X-Protected-By",
             "value": "OpenRASP 2.0"
+          },
+          {
+            "key": "Access-Control-Allow-Credentials",
+            "value": "true"
           }
         ]
       }
